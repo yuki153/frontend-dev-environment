@@ -1,0 +1,13 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation" : [ 4, { "message": "インデントが正しくありません" }],
+    "no-empty-source" : [ true, { "message": "不要な空行があります" }],
+    "max-empty-lines" : [ 2, {"message": "空行の連続数が指定されている「2」を超えています"}],
+    "number-leading-zero": [never, { "message": "小数点の頭の「0」は省略してください" }],
+    "no-eol-whitespace": [true, { "message": "空行にスペースが存在しています" }],
+    "block-closing-brace-empty-line-before": ['never', { "message": 手前の行に不要な空行が存在しています }],
+    "max-nesting-depth" : null,
+    "selector-max-compound-selectors": [ 4, { "message": 詳細度が高すぎます。定められた階層の深さ「4」を超過しています }]
+  }
+}

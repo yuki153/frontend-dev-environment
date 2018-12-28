@@ -1,0 +1,31 @@
+{
+    "env": {
+        "es6": true,
+        "browser": true
+    },
+    "extends": "airbnb-base",
+    "rules": {
+        "no-restricted-syntax": [
+            "error",
+            {
+                "selector": "ForInStatement",
+                "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+            },
+            {
+                "selector": "LabeledStatement",
+                "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+            },
+            {
+                "selector": "WithStatement",
+                "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+            }
+        ],
+        "indent": ["error", 4],
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+        "no-unused-expressions": ["error", { "allowTernary": true }],
+        "no-param-reassign": ["error", { "props": false }],
+        "no-use-before-define": 0,
+        "prefer-destructuring": ["error", {"object": true, "array": false}],
+        "no-underscore-dangle": ["error", {"allowAfterThis": true, "allowAfterSuper": true}]
+    }
+}

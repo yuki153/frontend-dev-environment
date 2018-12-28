@@ -1,0 +1,44 @@
+@import "../common/reset.scss";
+
+.example-page {
+    font-family: sans-serif;
+
+    .header {
+        margin-bottom: 30px;
+
+        &__title {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .exapmle-nav {
+        border: 1px solid #000;
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            width: calc(100% / 5);
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: #999;
+
+            &:hover {
+                background-color: #666;
+            }
+
+            a {
+                display: block;
+                height: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+
+    section {
+        height: 300px;
+    }
+}

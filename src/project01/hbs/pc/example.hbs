@@ -1,0 +1,44 @@
+{{! 画像のアップロード先が決まったら tasks/confing.js を書き換えて gulp を再実行する }}
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/pc/example.css">
+</head>
+<body>
+    <div class="example-page">
+    <header class="header">
+        <h1 class="header__title">Sample</h1>
+        {{> example-nav
+            anc1="info1" menuText1="情報１"
+            anc2="info2" menuText2="情報２"
+            anc3="info3" menuText3="情報３"
+            anc4="info4" menuText4="情報４"
+            anc5="info5" menuText5="情報５"
+        }}
+    </header>
+    <section id="info1">
+        <h1>information1</h1>
+        <img src="../../img/pc/sample.png" width="100" height="auto">
+    </section>
+    <section id="info2">
+        <h1>information2</h1>
+    </section>
+    <section id="info3">
+        <h1>information3</h1>
+    </section>
+    <section id="info4">
+        <h1>information4</h1>
+    </section>
+    <section id="info5">
+        <h1>information5</h1>
+    </section>
+    </div>
+    {{! polyfill script は webpack を通すと上手く作用しないので module として import はしない }}
+    <script src="../../js/common/polyfill-smooth-scroll.js"></script>
+    <script src="../../js/pc/example.js"></script>
+</body>
+</html>
