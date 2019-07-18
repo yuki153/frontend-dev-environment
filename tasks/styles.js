@@ -1,14 +1,14 @@
 const gulp = require('gulp')
 const postcss = require('gulp-postcss')
+const cssdeclsort = require('css-declaration-sorter');
 const prettify = require('postcss-prettify')
 const extend = require('postcss-extend');
 const _import = require('postcss-import');
 const nested = require('postcss-nested');
 const customProperties = require('postcss-custom-properties');
-const csscomb = require('gulp-csscomb');
 const autoprefixer = require('autoprefixer')
 const plumber = require('gulp-plumber')
-const { getPaths, option } = require('./config')
+const { getPaths } = require('./config')
 const inlineComment = require('postcss-strip-inline-comments')
 const scss = require('postcss-scss');
 const rename = require('gulp-rename');
@@ -19,7 +19,8 @@ const getPostcssModules = () => [
   customProperties({preserve: false}),
   nested(),
   inlineComment,
-  autoprefixer(option.autoprefixer),
+  autoprefixer(),
+  cssdeclsort({order: 'smacss'}),
   prettify(),
 ];
 
@@ -31,7 +32,6 @@ module.exports = function compileToCss() {
   return gulp.src(paths.styles.src)
     .pipe(plumber())
     .pipe(postcss(getPostcssModules(), {syntax: scss}))
-    .pipe(csscomb())
     .pipe(rename({
       extname: '.css'
     }))
