@@ -17,30 +17,30 @@ if (selectedProjectName) projects = [ selectedProjectName ];
  */
 function smartlyWatch(done) {
   const paths = getPaths(this);
-  gulp.watch(paths.styles.src, gulp.series(
-    stylelint.bind(this),
-    styles.bind(this),
-    compileToFtpHtml.bind(this),
-    replace.bind(this),
-    reload
-  ));
-  gulp.watch(paths.scripts.src, gulp.series(
-    scripts.bind(this),
-    compileToFtpHtml.bind(this),
-    replace.bind(this),
-    reload
-  ));
-  gulp.watch([paths.templates.src, paths.templates.partials], gulp.series(
-    compileToLocalHtml.bind(this),
-    compileToFtpHtml.bind(this),
-    replace.bind(this),
-    reload
-  ));
-  gulp.watch(paths.images.src, gulp.series(
-    minifyJpg.bind(this),
-    minifyPng.bind(this),
-    reload
-  ));
+    gulp.watch(paths.styles.src, gulp.series(
+      stylelint.bind(this),
+      styles.bind(this),
+      compileToFtpHtml.bind(this),
+      replace.bind(this),
+      reload
+    ));
+    gulp.watch(paths.scripts.src, gulp.series(
+      scripts.bind(this),
+      compileToFtpHtml.bind(this),
+      replace.bind(this),
+      reload
+    ));
+    gulp.watch([...paths.templates.src, paths.templates.partials], gulp.series(
+      compileToLocalHtml.bind(this),
+      compileToFtpHtml.bind(this),
+      replace.bind(this),
+      reload
+    ));
+    gulp.watch(paths.images.src, gulp.series(
+      minifyJpg.bind(this),
+      minifyPng.bind(this),
+      reload
+    ));
   done();
 }
 
