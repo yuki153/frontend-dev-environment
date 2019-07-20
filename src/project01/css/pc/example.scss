@@ -41,4 +41,16 @@
     section {
         height: 300px;
     }
+
+    .test {
+        width: calc(100% - 20px);
+        transform: translate(-50%, -50%);
+        position: absolute;
+        transition: .3s;
+        border: #000;
+        padding: 10px;
+        display: grid;
+        background-image: linear-gradient(#e66465, #9198e5);
+        box-sizing: border-box;
+    }
 }
