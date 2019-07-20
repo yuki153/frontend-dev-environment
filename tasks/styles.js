@@ -19,7 +19,7 @@ const getPostcssModules = () => [
   customProperties({preserve: false}),
   nested(),
   inlineComment,
-  autoprefixer(),
+  autoprefixer({grid: true}),
   cssdeclsort({order: 'smacss'}),
   prettify(),
 ];
