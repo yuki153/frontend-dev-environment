@@ -1,3 +1,7 @@
+import test from '../module/test-modules';
+
+test();
+
 const smoothScrollTriggers = document.getElementsByClassName('js-anc-smooth-scroll');
 const addSmoothScroll = (i) => {
     smoothScrollTriggers[i].addEventListener('click', (e) => {
