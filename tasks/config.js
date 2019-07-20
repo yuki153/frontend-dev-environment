@@ -46,10 +46,6 @@ const getPaths = (dir) => {
     scripts: {
       src: `src/${dir}/js/**/*.js`,
       release: `release/${dir}/js/`,
-      webpack: [
-        `src/${dir}/js/pc/*.js`,
-        `src/${dir}/js/sp/*.js`,
-      ],
     },
     images: {
       src: [
@@ -66,11 +62,7 @@ const option = {
   lint: {
       css: true,
       js: true
-  },
-  // autoprefixer 実行時オプション
-  autoprefixer: {
-      browsers: 'last 2 versions, ie >= 11, safari >= 8, ios >= 10, Android >= 5'
-  },
+  }
 }
 
 module.exports = { replacePath, getPaths, option }
