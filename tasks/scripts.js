@@ -7,7 +7,7 @@ const path = require('path');
 const fs = require('fs');
 const glob = require('glob');
 
-const filteringEmptyFile = (paths) => {
+const getEntryFiles = (paths) => {
   let entryFiles = {};
   let destIgnoredFiles = [];
   let jsFiles = [];
@@ -52,7 +52,7 @@ const filteringEmptyFile = (paths) => {
 
 module.exports = function transpileScript(done) {
   const paths = getPaths(this);
-  const entryFiles = filteringEmptyFile(paths);
+  const entryFiles = getEntryFiles(paths);
   if (!entryFiles) return done();
 
   return gulp.src(['./src/**/js/*.js'])
