@@ -53,7 +53,7 @@ const getEntryFiles = (paths) => {
 module.exports = function transpileScript(done) {
   const paths = getPaths(this);
   const entryFiles = getEntryFiles(paths);
-  if (!entryFiles) return done();
+  if (Object.keys(entryFiles).length < 1) return done();
 
   return gulp.src(['./src/**/js/*.js'])
   .pipe(plumber())
